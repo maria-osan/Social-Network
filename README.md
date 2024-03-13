@@ -3,7 +3,6 @@ This application was developed during MAP university classes.
 
 Throughout a full-semester faculty project, I significantly advanced my Java proficiency while acquiring new skills. This journey included gaining experience in domain-driven design principles, getting comfortable using lambdas for better code efficiency, building user-friendly interfaces with JavaFX, effective management of data using PostgreSQL database and implementing paging repositories to optimize data organization and retrieval.
 
-Pictures:
 
 When you open the application, a login prompt will be displayed:
 
