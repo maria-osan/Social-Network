@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetwork.controller.AppController">
+  <tabs>
+    <Tab text="Users">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="userTableView" layoutX="20.0" layoutY="20.0" prefHeight="271.0" prefWidth="370.0">
+                    <columns>
+                      <TableColumn fx:id="idUser" prefWidth="40.0" text="ID" />
+                      <TableColumn fx:id="firstName" prefWidth="90.0" text="First Name" />
+                        <TableColumn fx:id="lastName" prefWidth="90.0" text="Last Name" />
+                        <TableColumn fx:id="emailUser" prefWidth="147.0" text="Email" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="500.0" layoutY="126.0" mnemonicParsing="false" onAction="#onPressUpdateUser" prefHeight="25.0" prefWidth="80.0" text="Update" />
+                  <Button layoutX="500.0" layoutY="160.0" mnemonicParsing="false" onAction="#onPressDeleteUser" prefHeight="25.0" prefWidth="80.0" text="Delete" />
+                  <Button layoutX="500.0" layoutY="195.0" mnemonicParsing="false" onAction="#onPressSearchUser" prefHeight="25.0" prefWidth="80.0" text="Search" />
+                  <Button layoutX="405.0" layoutY="266.0" mnemonicParsing="false" onAction="#onPressReloadUsers" prefHeight="25.0" prefWidth="174.0" text="Reload list" />
+                  <TextField fx:id="textFirstName" layoutX="405.0" layoutY="21.0" prefHeight="25.0" prefWidth="174.0" promptText="First Name" />
+                  <TextField fx:id="textLastName" layoutX="405.0" layoutY="58.0" prefHeight="25.0" prefWidth="174.0" promptText="Last Name" />
+                  <TextField fx:id="textEmail" layoutX="405.0" layoutY="92.0" prefHeight="25.0" prefWidth="174.0" promptText="Email" />
+                  <TextField fx:id="textIDUpdateUser" layoutX="405.0" layoutY="126.0" prefHeight="25.0" prefWidth="80.0" promptText="ID" />
+                  <TextField fx:id="textIDSearchUser" layoutX="405.0" layoutY="195.0" prefHeight="25.0" prefWidth="80.0" promptText="ID" />
+                  <Button fx:id="previousButton" layoutX="20.0" layoutY="307.0" mnemonicParsing="false" onAction="#onPrevious" text="Previous" />
+                  <Button fx:id="nextButton" layoutX="338.0" layoutY="307.0" mnemonicParsing="false" onAction="#onNext" text="Next" />
+                  <Label fx:id="pageNumber" layoutX="191.0" layoutY="311.0" text="Page 0/0" />
+                  <Button layoutX="405.0" layoutY="231.0" mnemonicParsing="false" onAction="#onPressAddFriendship" prefHeight="25.0" prefWidth="174.0" text="Add to Friendships" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Friendships">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="friendshipTableView" layoutX="20.0" layoutY="20.0" prefHeight="255.0" prefWidth="370.0">
+                    <columns>
+                      <TableColumn fx:id="idFriendship" prefWidth="40.0" text="ID" />
+                      <TableColumn fx:id="friendEmail" prefWidth="90.0" text="User Email" />
+                        <TableColumn fx:id="friendsFrom" prefWidth="147.0" text="Date and Time" />
+                        <TableColumn fx:id="friendshipStatus" prefWidth="90.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="500.0" layoutY="85.0" mnemonicParsing="false" onAction="#onPressDeleteFriendship" prefHeight="25.0" prefWidth="80.0" text="Delete" />
+                  <Button layoutX="405.0" layoutY="250.0" mnemonicParsing="false" onAction="#onPressReloadFriendships" prefHeight="25.0" prefWidth="174.0" text="Reload friendships" />
+                  <Button layoutX="410.0" layoutY="205.0" mnemonicParsing="false" onAction="#onPressPendingFriends" prefHeight="25.0" prefWidth="80.0" text="Pending" />
+                  <Button layoutX="500.0" layoutY="170.0" mnemonicParsing="false" onAction="#onPressRejectedFriends" prefHeight="25.0" prefWidth="80.0" text="Rejected" />
+                  <Button layoutX="410.0" layoutY="170.0" mnemonicParsing="false" onAction="#onPressAcceptedFriends" prefHeight="25.0" prefWidth="80.0" text="Accepted" />
+                  <Button layoutX="410.0" layoutY="50.0" mnemonicParsing="false" onAction="#onPressAcceptFriendsReq" prefHeight="25.0" prefWidth="80.0" text="Accept" />
+                  <Button layoutX="500.0" layoutY="50.0" mnemonicParsing="false" onAction="#onPressRejectFriendReq" prefHeight="25.0" prefWidth="80.0" text="Reject" />
+                  <Button fx:id="previousButtonF" layoutX="20.0" layoutY="290.0" mnemonicParsing="false" onAction="#onPreviousF" text="Previous" />
+                  <Button fx:id="nextButtonF" layoutX="349.0" layoutY="290.0" mnemonicParsing="false" onAction="#onNextF" text="Next" />
+                  <Label fx:id="pageNumberF" layoutX="181.0" layoutY="294.0" text="Page 0/0" />
+                  <Label layoutX="410.0" layoutY="20.0" text="Manage friend request:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="410.0" layoutY="140.0" text="View friendships:" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Messages">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="messagesListView" layoutX="20.0" layoutY="20.0" prefHeight="310.0" prefWidth="370.0" />
+                  <TextField fx:id="sendEmailFrom" layoutX="405.0" layoutY="20.0" prefHeight="25.0" prefWidth="174.0" promptText="Email From:" />
+                  <TextField fx:id="sendEmailTo" layoutX="405.0" layoutY="52.0" prefHeight="25.0" prefWidth="174.0" promptText="Email To:" />
+                  <TextField fx:id="message" layoutX="405.0" layoutY="84.0" prefHeight="70.0" prefWidth="174.0" promptText="Message:" />
+                  <Button layoutX="405.0" layoutY="163.0" mnemonicParsing="false" onAction="#onPressSend" prefHeight="25.0" prefWidth="80.0" text="Send" />
+                  <Button layoutX="499.0" layoutY="163.0" mnemonicParsing="false" onAction="#onPressReply" prefHeight="25.0" prefWidth="80.0" text="Reply" />
+                  <TextField fx:id="searchMessageEmail1" layoutX="405.0" layoutY="241.0" prefHeight="25.0" prefWidth="174.0" promptText="Email 1:" />
+                  <TextField fx:id="searchMessageEmail2" layoutX="405.0" layoutY="272.0" prefHeight="25.0" prefWidth="174.0" promptText="Email 2:" />
+                  <Button layoutX="405.0" layoutY="305.0" mnemonicParsing="false" onAction="#onPressSearchMessage" prefHeight="25.0" prefWidth="174.0" text="Search Messages" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
